@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>Facebook Gallery</name>
+	<author>Alienation Digital</author>
+	<creationDate>9th Oct 2012</creationDate>
+	<copyright>Copyright (C) 2012 Alienation Digital. All rights reserved.</copyright>
+	<authorEmail>support@alienationdigital.co.uk</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>2.5.0</version>
+	<description>Module to display a specified Facebook Photo gallery</description>
+	<files>
+		<filename module="mod_fb_gallery">mod_fb_gallery.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_fb_gallery.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="Module Class Suffix"
+					description="Add a module class suffix" />
+				<field
+					name="fbg_id"
+					type="text"
+					default=""
+					label="Facebook Gallery ID"
+					description="ID number for Facebook Gallery" />
+				<field
+					name="fbg_limit"
+					type="text"
+					label="Photo Limit"
+					description="Maximum number of photos to display" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
