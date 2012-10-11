@@ -16,4 +16,8 @@ $photos	= modFbGalleryHelper::getPhotos($params);
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 
+$document = JFactory::getDocument();
+$document->addStyleSheet(JURI::base().'modules/mod_fb_gallery/assets/fb_gallery.css');
+$document->addScript(JURI::base().'modules/mod_fb_gallery/assets/fb_gallery.js');
+
 require JModuleHelper::getLayoutPath('mod_fb_gallery', $params->get('layout', 'default'));

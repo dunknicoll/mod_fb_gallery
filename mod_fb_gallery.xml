@@ -4,7 +4,7 @@
 	version="2.5"
 	client="site"
 	method="upgrade">
-	<name>Facebook Gallery</name>
+	<name>mod_fb_gallery</name>
 	<author>Alienation Digital</author>
 	<creationDate>9th Oct 2012</creationDate>
 	<copyright>Copyright (C) 2012 Alienation Digital. All rights reserved.</copyright>
@@ -14,10 +14,19 @@
 	<description>Module to display a specified Facebook Photo gallery</description>
 	<files>
 		<filename module="mod_fb_gallery">mod_fb_gallery.php</filename>
-		<folder>tmpl</folder>
 		<filename>helper.php</filename>
 		<filename>index.html</filename>
 		<filename>mod_fb_gallery.xml</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>assets/fb_gallery.css</filename>
+		<filename>assets/fb_gallery.js</filename>
+		<filename>assets/index.html</filename>
+		<filename>images/arrows.png</filename>
+		<filename>images/close.png</filename>
+		<filename>images/spinner.gif</filename>
+		<filename>images/transback.png</filename>
+		<filename>images/index.html</filename>
 	</files>
 	<config>
 		<fields name="params">

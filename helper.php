@@ -37,7 +37,7 @@ class modFbGalleryHelper
 	    			{
 	    				break;
 	    			}
-	    			$images[] = array('big'=>$photo->images[1]->source, 'small'=>$photo->images[8]->source);
+	    			$images[] = array('big'=>$photo->images[2]->source, 'small'=>$photo->images[8]->source);
 	    			$i++;
 	    		}
 

@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
 <?php if ($photos) : ?>
 	<ul>
 		<?php foreach( $photos as $photo ) : ?>
-			<li><a href="<?php echo $photo['big']; ?>" class="modal"><img src="<?php echo $photo['small']; ?>" /></a></li>
+			<li><a href="<?php echo $photo['big']; ?>" class="fbg_items"><img src="<?php echo $photo['small']; ?>" /></a></li>
 		<?php endforeach; ?>
 	</ul>
 <?php endif; ?>
