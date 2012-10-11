@@ -38,7 +38,7 @@ div#adfb_spinner {
 }
 
 #adfb_previous {
-    width: 100px;
+    width: 55px;
     height: 57px;
     position: absolute;
     left: 0;
@@ -51,7 +51,7 @@ div#adfb_spinner {
 }
 
 #adfb_next {
-    width: 100px;
+    width: 55px;
     height: 57px;
     position: absolute;
     right: 0;
