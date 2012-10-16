@@ -42,11 +42,12 @@ div#adfb_spinner {
     height: 57px;
     position: absolute;
     left: 0;
-    background: url(../images/arrows.png) 0 -146px no-repeat;
+    background: url(../images/arrows.png) -45px -146px no-repeat;
     cursor:pointer;
 }
 
 #adfb_previous:hover {
+    width: 100px;
     background: url(../images/arrows.png) 0 -366px no-repeat;
 }
 
@@ -60,18 +61,18 @@ div#adfb_spinner {
 }
 
 #adfb_next:hover {
+    width: 100px;
     background: url(../images/arrows.png) 0 -220px no-repeat;
 }
 
 #adfb_close {
-    background: url(../images/close.png) 0 0 no-repeat;
+    background: url(../images/close.png) 0 -60px no-repeat;
     width: 40px;
     height: 40px;
     position: absolute;
     cursor:pointer;
-    border: 5px solid white;
 }
 
 #adfb_close:hover {
-    background: url(../images/close.png) 0 -60px no-repeat;
+    background: url(../images/close.png) 0 0 no-repeat;
 }

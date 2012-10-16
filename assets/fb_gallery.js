@@ -4,7 +4,7 @@ function ADFBGallery( link_class )
 	{
 		this.items = $$( link_class );
 		this.count = this.items.length;
-		this.pointer = 0;
+		this.pointer = -1;
 
 		this.shade = {};
 		this.outer = {};
@@ -77,16 +77,18 @@ ADFBGallery.prototype._createEvents = function(){
 
 	this.cnext.addEvent('click',function(e){
 		e.stopPropagation();
+		var oldp = self.pointer;
 		self.pointer++;
 		if(self.pointer>self.count-1) self.pointer=0;
-		self._switchItem(self.pointer);
+		self._switchItem(self.pointer,oldp);
 	});
 
 	this.cprev.addEvent('click',function(e){
 		e.stopPropagation();
+		var oldp = self.pointer;
 		self.pointer--;
 		if(self.pointer<0) self.pointer=self.count-1;
-		self._switchItem(self.pointer);
+		self._switchItem(self.pointer,oldp);
 	});
 
 	this.full.addEvent('load',function(){
@@ -104,8 +106,8 @@ ADFBGallery.prototype._createEvents = function(){
 
 		self.inner.setStyle('width',size.x+30);
 
-		self.closebutton.setStyle('top',top-30);
-		self.closebutton.setStyle('right',right-30)
+		self.closebutton.setStyle('top',top-14);
+		self.closebutton.setStyle('right',right-16)
 
 		self.controls.setStyle('width',size.x+30);
 		self.controls.setStyle('top',middle-18 );
@@ -118,12 +120,26 @@ ADFBGallery.prototype._createEvents = function(){
 		e.preventDefault();
 		e.stopPropagation();
 
+		var oldp = self.pointer;
+
 		self.pointer = self._indexInArray(self.items,this);
 
 		self._open();
 
-		self._switchItem(self.pointer);
+		self._switchItem(self.pointer,oldp);
 
+	});
+
+	this.outer.addEvent('click',function(e){
+		e.stopPropagation();
+	});
+
+	this.inner.addEvent('click',function(e){
+		e.stopPropagation();
+	});
+
+	this.full.addEvent('click',function(e){
+		e.stopPropagation();
 	});
 
 	this.shade.addEvent('click',function(e){
@@ -140,13 +156,17 @@ ADFBGallery.prototype._open = function(){
 	this.shade.show();
 }
 
-ADFBGallery.prototype._switchItem = function(pid)
+ADFBGallery.prototype._switchItem = function(pid,oldid)
 {
 	var item = this.items[pid];
 
 	$('adfb_outer').setStyle('visibility','hidden');
 
 	this.full.set('src',item.get('href'));
+
+	if( oldid==pid ){
+		this.full.fireEvent('load');
+	}
 }
 
 var initEvent = window.webkit ? 'load' : 'domready';
